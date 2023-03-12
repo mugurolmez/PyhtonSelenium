@@ -20,7 +20,7 @@ print(int(vade)+12)
 vade= vade + 12
 
 #string interpolation
-#Seçtiğiniz cade sonucu ortaya çıkan vade:          #str dönüştürme
+#Seçtiğiniz vade sonucu ortaya çıkan vade:          #str dönüştürme
 print("seçtiğiniz vade sonucu ortaya çıkan vade: "+str(vade))
 print("seçtiğiniz vade sonucu ortaya çıkan vade: {vadeSayisi}".format(vadeSayisi=vade))
 print(f"seçtiğiniz vade sonucu ortaya çıkan vade: {vade}")
@@ -146,7 +146,7 @@ calculate()
 sayHello("Halit")
 sayHello("Arif")
 sayHello("Mevlüt")
-
+#void
 def calculatePrice(price,discount):
     print(price-discount)
 
