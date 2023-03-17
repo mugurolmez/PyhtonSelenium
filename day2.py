@@ -155,6 +155,6 @@ def calculateAndReturn(price,discount):
 print("***************")
 fonk1=calculatePrice(100,50)
 fonk2=calculateAndReturn(300,100)
-print(f"159.satır: {fonk1+100}")
+#print(f"159.satır: {fonk1+100}")
 print(f"160.satır: {fonk2+100}")
 print("**********************")
