@@ -1,9 +1,9 @@
 #allias takma ad as ile kullanılıyor
-from matematik import topla as toplamaIslemi
-from day2 import sayHello
-from human import Human
+from day3.matematik import topla as toplamaIslemi
+from day2.day2 import sayHello
+from day3.human import Human
 import random #ragele sayı ureten modul
-from selenium import webdriver
+from day3.seleniumExemple import webdriver
 #package
 print(toplamaIslemi(10,20))
 
