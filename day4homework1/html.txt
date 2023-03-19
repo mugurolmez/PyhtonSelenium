@@ -1,0 +1,26 @@
+hyper text markup language(HTML)
+tarayıcıların okuyup anlamlandırdıgı dildir.
+web sitenin iskeletidir
+ençok kullanılan kodlar
+<!DOCTYPE html> html belgeleri bu kodla başlamalıdır bu kod HTML% formatında kodlanıldığını gösterir.
+<html> kök kod da denir. tum kodlar bu iki etilet arasında olmak zorundadır.
+<body>görüntülenebilen tum kodların yazıldığı alandır.
+<head>web sayfasının dili başlığı diğer düzenlemelerin oldugu etikettir.
+<title> sitenin başlık alanı ıcın kullanılır. <head> etiketleri arasında olmalıdır.
+<meta charset="utf-8"> türkce karakter desteğide dahil olmak uzere perk cok dil seti içerdiğini belirtir.
+
+Başlık Kodu
+html temelde 6 başlık kodu destekler
+örnek kullanım
+<h1>birinci başlık<h1>
+<h2>ikinci başlık başlık<h2> hx 
+...
+şeklinde devam eder.
+
+paragraf kodu <p> metin içerisinde paragraf olusturmanızı sağlayan koddur.
+
+Satır sonu<br> kullanıldıgı yerde metin bır sıra boşluk atlayarak devam eder
+
+<img> resim eklemek için kullanılan koddur
+<button> buton eklemek için kullanılır. etkileşimli içerikler olusturmak ıcın kullanılır.
+

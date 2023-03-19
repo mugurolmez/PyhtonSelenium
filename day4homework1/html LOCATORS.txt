@@ -1,0 +1,28 @@
+elementlerı bulmak ıcın kullanılan bır araçtır.
+elementler 8 farklı locator ile bulunur
+1 ID Locator: elemetin id özelliği kullanılarak bulunur
+element = driver.find_element_by_id("element_id")
+
+2 Name Locator: elementin name özelliği kullanılarak bulunur.
+element = driver.find_element_by_name("element_name")
+
+3 Class Name locator: elementin class adı kullanılarak bulunur.
+element = driver.find_element_by_class_name("element_class_name")
+
+4 Tag Name Locator : elementin tag adı kullanılarak bulunur.
+element = driver.find_element_by_tag_name("element_tag_name")
+
+5 link Text Locator: elementin bağlantı meti kullanılarak bulunur
+element = driver.find_element_by_link_text("element_link_text")
+
+6 Partial lint text locator elementin kısmı bağlantı metni kullanılarak bulunur
+element = driver.find_element_by_partial_link_text("partial_link_text")
+
+7 CSS Selector locator: Elementi CSS Selector özelliği kullanılarak bulunur
+element = driver.find_element_by_css_selector("css_selector")
+
+8 XPath locator: elementin XPath ifadesi Kullanılarak bulunur
+element = driver.find_element_by_xpath("xpath_expression")
+
+en sık IDiName ve XPath kullanılır. sitein element yapısına ve ozelliklerine bağlı olarak değişebilir bu nedenle doğru locator seçmek onemlıdır.
+
