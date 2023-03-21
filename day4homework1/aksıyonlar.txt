@@ -1,0 +1,30 @@
+click(): Bir öğeye tıklamak için kullanılır. Örneğin, bir düğmeye veya bağlantıya tıklamak istiyorsanız, bu metodu kullanabilirsiniz.
+search_button = driver.find_element_by_name("btnK")
+search_button.click()
+
+send_keys(): Bir metin kutusuna veri girmek için kullanılır.
+search_box = driver.find_element_by_name("q")
+search_box.send_keys("selenium send keys example")
+
+clear(): Bir metin kutusundaki mevcut verileri temizlemek için kullanılır.
+
+search_box = driver.find_element_by_name("q")
+search_box.send_keys("selenium clear example")
+
+search_box.clear()
+
+submit(): Bir formu göndermek için kullanılır.
+search_box = driver.find_element_by_name("q")
+search_box.send_keys("selenium submit example")
+
+search_box.submit()
+
+back(): Tarayıcıda geri düğmesine tıklar.
+forward(): Tarayıcıda ileri düğmesine tıklar.
+refresh(): Sayfayı yeniler.
+is_displayed(): Bir elementin görünür olup olmadığını kontrol eder. Görünürse True, değilse False döndürür
+is_enabled(): Bir elementin etkin olup olmadığını kontrol eder. Etkinse True, değilse False döndürür.
+is_selected(): Bir elementin seçili olup olmadığını kontrol eder. Seçiliyse True, değilse False döndürür
+get_attribute(): Bir elementin belirtilen özelliğinin değerini alır. Özellik adı argüman olarak verilir.
+text: Bir elementin içeriğindeki metni alır.
+Örnek: element.text

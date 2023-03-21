@@ -1,5 +1,5 @@
-from human import Human
-import matematik as math
+from day3.human import Human
+import day3.matematik as math
 
 math.bol(20,2)
 #sınıflar
