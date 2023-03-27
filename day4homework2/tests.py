@@ -119,6 +119,8 @@ class tests:
         
         if(len(list)==6):
             print("test sonucu başarılı")
+
+    
         
         
    
