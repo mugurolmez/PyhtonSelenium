@@ -1,1 +1,1 @@
-<img src="https://ibb.co/Ln2qNS5">
+![Test Sonuç Ekranı](testsonucekrani.png)
