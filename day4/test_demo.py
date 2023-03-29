@@ -8,6 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import pytest
 from pathlib import Path #klasör acmak için
 from datetime import date
+import os
 
 #prefix=> ön ek test_
 #postfix
