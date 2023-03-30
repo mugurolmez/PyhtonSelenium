@@ -1,8 +1,6 @@
 from datetime import date
 import inspect
 from pathlib import Path
-import sys
-import traceback
 import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -15,11 +13,15 @@ import os
 class Test_homework5:
     def my_function():
         pass
+    def screen_shot(self):
+        test_name = inspect.currentframe().f_back.f_code.co_name#bir üst fonksiyonun ismimi almak için 
+        self.driver.save_screenshot(f"{self.folderPath}/{test_name}.png")
+    
     def setup_method(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.maximize_window()
         self.driver.get("https://www.saucedemo.com/")
-        self.folderPath =os.path.join(os.getcwd(), "day5homework2", str(date.today()))
+        self.folderPath =os.path.join(os.path.dirname(os.path.abspath(__file__)), str(date.today()))#bulkundugum klasorun yolu
         Path(self.folderPath).mkdir(exist_ok=True)
 
     def teardown_method(self):
@@ -81,7 +83,8 @@ class Test_homework5:
         self.waitForElementVisible((By.XPATH,"/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3"))
         errorMessage = self.driver.find_element(By.XPATH,"/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
         assert errorMessage.text == "Epic sadface: Username is required"  
-        self.driver.save_screenshot(f"{self.folderPath}/test_nullnameAndPassword.png")
+        self.screen_shot()
+        
         
 
 
@@ -93,11 +96,10 @@ class Test_homework5:
       
         self.waitForElementVisible((By.XPATH,"/html/body/div/div/div[2]/div[1]/div/div/form/div[3]"))
         errorMessage=self.driver.find_element(By.XPATH,"/html/body/div/div/div[2]/div[1]/div/div/form/div[3]")
-
-
         
         assert errorMessage.text == "Epic sadface: Password is required"
-        self.driver.save_screenshot(f"{self.folderPath}/test_nullnameAndPassword.png")
+        self.screen_shot()
+        
 
 
     def test_lockedUser(self):
@@ -111,7 +113,7 @@ class Test_homework5:
         self.waitForElementVisible((By.XPATH,"/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3"))
         errorMessage=self.driver.find_element(By.XPATH,"/html/body/div/div/div[2]/div[1]/div/div/form/div[3]/h3")
         assert errorMessage.text == "Epic sadface: Sorry, this user has been locked out."
-        self.driver.save_screenshot(f"{self.folderPath}/test_lockedUser.png")
+        self.screen_shot()
 
 
     def test_xButton(self):
@@ -124,7 +126,7 @@ class Test_homework5:
                 
 
         assert buttonIsVisible==0#butonun gorunmez olduguğunu dogrulamak ıcın assert not xbutton.disp false geldiğinde dogru olacak
-        self.driver.save_screenshot(f"{self.folderPath}/test_xButton.png")
+        self.screen_shot()
     
     def test_loginUser(self):
         
@@ -134,7 +136,7 @@ class Test_homework5:
         list = self.driver.find_elements(By.CLASS_NAME, "inventory_item")
         #açılan sayfadaki inventory_itemleri listele
         assert(ifPageLoaded and len(list)==6)
-        self.driver.save_screenshot(f"{self.folderPath}/test_loginUser.png")
+        self.screen_shot()
 
     def test_add_to_cart_click(self):
         self.validLogin()
@@ -144,7 +146,7 @@ class Test_homework5:
 
         ifPageLoaded=self.driver.current_url=="https://www.saucedemo.com/inventory-item.html?id=4"
         assert (ifPageLoaded==True)
-        self.driver.save_screenshot(f"{self.folderPath}/test_add_to_cart_click.png")
+        self.screen_shot()
 
 
     def test_add_all_to_cart(self):
@@ -158,7 +160,7 @@ class Test_homework5:
         list=self.driver.find_elements(By.CLASS_NAME,"cart_item")
 
         assert (len(list)==6)
-        self.driver.save_screenshot(f"{self.folderPath}/test_add_all_to_cart.png")
+        self.screen_shot()
 
 
     @pytest.mark.parametrize("username,password",[("standard_user","secret_sauce"),("performance_glitch_user","secret_sauce"),("problem_user","secret_sauce")])

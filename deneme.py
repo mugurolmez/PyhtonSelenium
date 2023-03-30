@@ -1,21 +1,14 @@
-
+from datetime import date
 import inspect
-from selenium.webdriver.common.by import By
+import os
+from pathlib import Path
 
-def test_xButton(self):
-    self.loginButtonClick() 
-    self.xButtonClick()
-    
-    # Ekran görüntüsü adı, xButtonClick fonksiyonunun adını alarak oluşturuluyor
-    functionName = inspect.getframeinfo(inspect.currentframe().f_back).function
-    screenshotName = f"{self.folderPath}/{functionName}.png"
-    
-    # Ekran görüntüsü alıyoruz
-    self.driver.save_screenshot(screenshotName)
-    
-    # Test sonucunu assert ifadesiyle kontrol ediyoruz
+def deneme1234():
+    def inner_func():
+        folderPath =os.path.join(os.getcwd(), "day5homework2", str(date.today()))
+        Path(folderPath).mkdir(exist_ok=True)
+        print(inspect.currentframe().f_back.f_code.co_name)
 
-    
-    # Fonksiyon adını ve ekran görüntüsü adını ekrana yazdırıyoruz
-    print(f"Test adı: {functionName}")
-    print(f"Ekran görüntüsü adı: {screenshotName}")
+    inner_func()
+
+deneme1234() # deneme
